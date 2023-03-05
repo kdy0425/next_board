@@ -34,7 +34,7 @@ export default function Detail(props){
 
 export async function getServerSideProps(context) {
     const id = context.params.id;
-    const apiUrl = process.env.DETAIL_API_URL + `${id}?api_key=` + process.env.API_KEY;
+    const apiUrl = process.env.API_URL + `/movie/${id}?api_key=` + process.env.API_KEY;
     console.log(apiUrl)
     const res = await Axios.get(apiUrl)
     return {
